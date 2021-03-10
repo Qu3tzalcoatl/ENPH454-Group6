@@ -1,0 +1,16 @@
+Pseudo code:
+
+Start
+Light On()
+while (check Light != 0)
+	Send signal()
+
+Def Light On()
+	Turn on light curtain
+
+Def Check Light ()
+	compare light received to light expected?
+	return check light
+
+Def Send Signal()
+	change signal to arduino from 0V to 5V
