@@ -20,7 +20,6 @@ void setup()
   case 1:
     digitalWrite(dir_alignPin, LOW); // clockwise rotation
     turn(step_alignPin, 60);
-    turn(stepPin, 360);
     digitalWrite(dir_alignPin, HIGH); // counterclockwise rotation
     turn(step_alignPin, 60);
     break;
