@@ -1,14 +1,14 @@
-void setup() {
+//void setup() {
   // put your setup code here, to run once:
-  pinMode(28, OUTPUT);
-  pinMode(30, OUTPUT);
-  pinMode(32, OUTPUT);
-  pinMode(34, OUTPUT);
-  int condition = 2;
+  //pinMode(28, OUTPUT);
+  //pinMode(30, OUTPUT);
+  //pinMode(32, OUTPUT);
+  //pinMode(34, OUTPUT);
+  //int condition = 2;
 
   // put your main code here, to run repeatedly:
 
-switch (condition) {
+/* switch (condition) {
   case 1:
     turnCCW(60);
     delay(2000);
@@ -26,9 +26,9 @@ switch (condition) {
     break;
 
   default:
-    break;
-}
-}
+    break; */
+  //}
+//}
 
 void loop() {
   
