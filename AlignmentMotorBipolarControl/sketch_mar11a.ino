@@ -6,21 +6,24 @@ void setup()
   // Define pin connections & motor's steps per revolution
   const int dirPin = 22;
   const int stepPin = 24;
-  const int stepsPerRevolution = 20000;
+  int stepsPerRevolution;
   // Declare pins as Outputs
   pinMode(stepPin, OUTPUT);
   pinMode(dirPin, OUTPUT);
 
-  int condition = 0;
+  int condition = 2;
 
   switch (condition) {
   case 1:
     digitalWrite(dirPin, HIGH); // clockwise rotation
+    stepsPerRevolution = 20000;
     break;
   case 2:
-    break;
     digitalWrite(dirPin, LOW); // counterclockwise rotation
+    stepsPerRevolution = 20000;
+    break;
   case 0:
+    stepsPerRevolution = 0;
     break;
 
   default:
