@@ -24,8 +24,12 @@ void setup()
     turn(step_alignPin, 60);
     break;
   case 2:
+    digitalWrite(dir_alignPin, HIGH); // counterclockwise rotation
+    turn(step_alignPin, 60);
+    digitalWrite(dir_alignPin, LOW); // clockwise rotation
+    turn(step_alignPin, 60);
     break;
-    digitalWrite(dirPin, LOW); // counterclockwise rotation
+    
   case 0:
     break;
 
@@ -45,8 +49,8 @@ void turn(int pin, int angle)
 for(int x = 0; x < iterations; x++)
   {
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(1000);
+    delayMicroseconds(100);
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(1000);
+    delayMicroseconds(100);
   }
 }
