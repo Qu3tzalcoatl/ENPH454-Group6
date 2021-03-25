@@ -21,18 +21,26 @@ void setup() {
 
 }
 
-char condition = 0;
-//char rx_byte = 0;
+const int dirPin = 22;
+const int stepPin = 24;
+  
+const int dir_alignPin = 26;
+const int step_alignPin = 28;
+
+
+int condition = 0;
+char rx_byte = 0;
 
 
 void loop(){
   if (Serial.available() > 0) { // is a character available?
-    condition = Serial.read();       // get the character
+    rx_byte = Serial.read();       // get the character
 
     // check if a number was received
-    if ((condition >= '0') && (condition <= '9')) {
+    if ((rx_byte >= '0') && (rx_byte <= '9')) {
       Serial.print("Number received: ");
-      Serial.println(condition);
+      Serial.println(rx_byte);
+      int condition = (int)rx_byte - 48;
     }
     else {
       Serial.println("Not a number.");
