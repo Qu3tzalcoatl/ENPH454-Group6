@@ -30,26 +30,29 @@ const int stepPin = 24;
 
 const int dir_alignPin = 26;
 const int step_alignPin = 28;
-
+const int pwmPin = 31;
 int condition = 0;
 int pwmOutput = 0;
 
 void loop(){
   
-  pwmOutput = pulseIn(readPin, HIGH, 20000);
+  pwmOutput = pulseIn(pwmPin, HIGH, 20000)/4;
 
-  //case 1
-  if pwmOutput < 100 {
+  //cases
+  if (pwmOutput < 12) {
     condition = 0;
   }
-  else if 400 < pwmOutput < 800 {
+  else if (50 < pwmOutput < 100) {
     condition = 1;
   }
-  else if 1040 < pwmOutput < 1440 {
+  else if (130 < pwmOutput < 180) {
     condition = 2;
   }
-  else if pwmOutput > 1760 {
+  else if (pwmOutput > 220) {
     condition = 3;
+  }
+  else {
+    break;
   }
   
   switch (condition) {
