@@ -42,6 +42,12 @@ void loop() {
   
   //Serial.println(digitalRead(case1));
   //cases
+  if (Serial.available() > 0) {
+    incomingByte = Serial.read();
+    
+  }
+  
+  
   if (digitalRead(case1)==HIGH) {
     Serial.print("case1");
     Serial.print('\n');
